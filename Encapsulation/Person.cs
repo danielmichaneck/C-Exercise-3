@@ -28,7 +28,8 @@ namespace Persons
             get { return _fName; }
             set
             {
-                if (CheckStringLengthValidity("FName", value, 2, 10))
+                if (CheckStringNullLengthValidity("FName", value) &&
+                    CheckStringLengthValidity("FName", value, 2, 10))
                     _fName = value;
             }
         }
@@ -38,7 +39,12 @@ namespace Persons
         public string LName
         {
             get { return _lName; }
-            set { _lName = value; }
+            set
+            {
+                if (CheckStringNullLengthValidity("LName", value) &&
+                    CheckStringLengthValidity("LName", value, 2, 10))
+                    _lName = value;
+            }
         }
 
         private double _height;
@@ -61,6 +67,20 @@ namespace Persons
         {
             FName = fName;
             LName = lName;
+        }
+
+        public Person(string fullName)
+        {
+            string[] names = fullName.Split(" ");
+            FName = names[0];
+            LName = names[1];
+        }
+
+        private bool CheckStringNullLengthValidity(string prop, string str)
+        {
+            if (String.IsNullOrWhiteSpace(str))
+                throw new ArgumentException($"{prop} was null, empty, or white space.");
+            else return true;
         }
 
         private bool CheckStringLengthValidity(string prop, string str, int min, int max)
