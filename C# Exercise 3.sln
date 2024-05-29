@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Encapsulation", "Encapsulat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{40276884-A56E-4E83-B20F-3471D2569D53}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polymorphism", "Polymorphism\Polymorphism.csproj", "{F067C5E1-E97E-41BF-BFA7-30E2576BE571}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{40276884-A56E-4E83-B20F-3471D2569D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40276884-A56E-4E83-B20F-3471D2569D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40276884-A56E-4E83-B20F-3471D2569D53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F067C5E1-E97E-41BF-BFA7-30E2576BE571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F067C5E1-E97E-41BF-BFA7-30E2576BE571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F067C5E1-E97E-41BF-BFA7-30E2576BE571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F067C5E1-E97E-41BF-BFA7-30E2576BE571}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
