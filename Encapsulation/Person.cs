@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Persons
 {
-    public class Person
+    internal class Person
     {
         private int _age;
 
