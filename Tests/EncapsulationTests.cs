@@ -21,6 +21,22 @@ namespace Tests
         }
 
         [Fact]
+        public void Should_Create_Person_Directly()
+        {
+            Person person;
+            bool expected = true;
+            try
+            {
+                person = new Person("Orgrim Doomhammer");
+            }
+            catch
+            {
+                expected = false;
+            }
+            Assert.True(expected);
+        }
+
+        [Fact]
         public void Should_NOT_Create_Person_Null_Last_Name()
         {
             var personHandler = new PersonHandler();
@@ -43,7 +59,7 @@ namespace Tests
             bool expected = true;
             try
             {
-                var person = personHandler.CreatePerson(60, "Orgrim", "Doomhammerz", 210, 120);
+                var person = personHandler.CreatePerson(60, "Tyrande", "Whisperwind", 210, 120);
             }
             catch
             {
