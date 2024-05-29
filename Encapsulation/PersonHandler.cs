@@ -38,5 +38,10 @@ namespace Persons
         {
             person.Weight = weight;
         }
+
+        public void DoNothing()
+        {
+            throw new ArgumentException("For the test!");
+        }
     }
 }
