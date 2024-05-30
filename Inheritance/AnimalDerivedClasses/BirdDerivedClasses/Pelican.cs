@@ -14,6 +14,15 @@ namespace Inheritance
             get { return _mouthSize; }
             set { _mouthSize = value; } }
 
-        public Pelican() : base(name: "Pelican", weight: 15, age: 20, canFly: true) { }
+        public Pelican() : base(name: "Pelican", weight: 15, age: 20, canFly: true)
+        {
+            MouthSize = 15;
+            SetDerivedClassProperties();
+        }
+
+        internal override void SetDerivedClassProperties()
+        {
+            BirdProperties.Append($"Mouth size: {MouthSize}" + Environment.NewLine);
+        }
     }
 }

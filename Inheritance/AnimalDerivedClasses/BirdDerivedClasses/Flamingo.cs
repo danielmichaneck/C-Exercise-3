@@ -22,7 +22,7 @@ namespace Inheritance
 
         internal override void SetDerivedClassProperties()
         {
-            BirdProperties.Append($"LegLength: {LegLength}" + Environment.NewLine);
+            BirdProperties.Append($"Leg length: {LegLength}" + Environment.NewLine);
         }
     }
 }

@@ -14,6 +14,15 @@ namespace Inheritance
             get { return _wingSpan; }
             set { _wingSpan = value; } }
 
-        public Swan() : base(name: "Swan", weight: 5, age: 5, canFly: true) { }
+        public Swan() : base(name: "Swan", weight: 5, age: 5, canFly: true)
+        {
+            WingSpan = 200;
+            SetDerivedClassProperties();
+        }
+
+        internal override void SetDerivedClassProperties()
+        {
+            BirdProperties.Append($"Wingspan: {WingSpan}" + Environment.NewLine);
+        }
     }
 }

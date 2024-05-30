@@ -12,5 +12,7 @@ namespace Inheritance
         {
             Console.WriteLine("Awoo! Ahem, sorry. It's a full moon tonight.");
         }
+
+        public Wolfman() : base("Wolfman") { }
     }
 }

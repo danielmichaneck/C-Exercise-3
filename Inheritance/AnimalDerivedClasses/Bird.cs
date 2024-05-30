@@ -45,9 +45,8 @@ namespace Inheritance
 
         internal void SetProperties()
         {
-            BirdProperties = new StringBuilder();
-            BirdProperties.Append(StaticAnimalHelper.GetStandardAnimalProperties(Name, Weight, Age));
-            BirdProperties.Append("CanFly: " + CanFly + Environment.NewLine);
+            BirdProperties = StaticAnimalHelper.SetStandardAnimalProperties(Name, Weight, Age);
+            StaticAnimalHelper.AppendAnimalProperty(BirdProperties, "Can fly", CanFly.ToString());
         }
 
         internal virtual void SetDerivedClassProperties() {}
