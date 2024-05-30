@@ -14,6 +14,11 @@ namespace Inheritance
             get { return _jumpHeight; }
             set { _jumpHeight = value; } }
 
+        public override string Stats()
+        {
+            throw new NotImplementedException();
+        }
+
         internal override void DoSound()
         {
             Console.WriteLine("Neigh neigh!");

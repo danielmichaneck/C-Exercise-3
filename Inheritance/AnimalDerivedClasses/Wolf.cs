@@ -14,6 +14,11 @@ namespace Inheritance
             get { return _hearingRange; }
             set { _hearingRange = value; } }
 
+        public override string Stats()
+        {
+            throw new NotImplementedException();
+        }
+
         internal override void DoSound()
         {
             Console.WriteLine("Awoo! Awoo!");

@@ -8,7 +8,7 @@ namespace Inheritance
 {
     internal abstract class Animal
     {
-        private string _name;
+        private string _name = "Animal";
 
         public string Name { get; set; }
 
@@ -24,6 +24,9 @@ namespace Inheritance
         {
 
         }
+
+        public abstract string Stats();
+
         internal abstract void DoSound();
     }
 }

@@ -16,6 +16,11 @@ namespace Inheritance
             get { return _speed; }
             set { _speed = value; } }
 
+        public override string Stats()
+        {
+            throw new NotImplementedException();
+        }
+
         internal override void DoSound()
         {
             Console.WriteLine("Woof woof!");

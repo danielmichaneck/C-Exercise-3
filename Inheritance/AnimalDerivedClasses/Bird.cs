@@ -8,11 +8,49 @@ namespace Inheritance
 {
     internal class Bird : Animal
     {
-        private bool _canFly;
+        private bool _canFly = true;
 
         public bool CanFly {
             get { return _canFly; }
             set { _canFly = value; } }
+
+        private StringBuilder _birdProperties;
+
+        public StringBuilder BirdProperties {
+            get { return _birdProperties; }
+            set { _birdProperties = value; } }
+
+        public Bird()
+        {
+            Name = "Bird";
+            Weight = 0;
+            Age = 0;
+            CanFly = true;
+            SetProperties();
+        }
+
+        public Bird(string name, double weight, int age, bool canFly)
+        {
+            Name = name;
+            Weight = weight;
+            Age = age;
+            CanFly = canFly;
+            SetProperties();
+        }
+
+        public override string Stats()
+        {
+            return BirdProperties.ToString();
+        }
+
+        internal void SetProperties()
+        {
+            BirdProperties = new StringBuilder();
+            BirdProperties.Append(StaticAnimalHelper.GetStandardAnimalProperties(Name, Weight, Age));
+            BirdProperties.Append("CanFly: " + CanFly + Environment.NewLine);
+        }
+
+        internal virtual void SetDerivedClassProperties() {}
 
         internal override void DoSound()
         {

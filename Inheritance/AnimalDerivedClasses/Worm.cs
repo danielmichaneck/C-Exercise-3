@@ -13,6 +13,12 @@ namespace Inheritance
         public bool IsUnderGround {
             get { return _isUnderground; }
             set { _isUnderground = value; } }
+
+        public override string Stats()
+        {
+            throw new NotImplementedException();
+        }
+
         internal override void DoSound()
         {
             Console.WriteLine("Rrrrrrr");

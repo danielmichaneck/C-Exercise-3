@@ -14,6 +14,11 @@ namespace Inheritance
             get { return _numberOfSpikes; }
             set { _numberOfSpikes = value; } }
 
+        public override string Stats()
+        {
+            throw new NotImplementedException();
+        }
+
         internal override void DoSound()
         {
             Console.WriteLine("Ninini ninini!");
