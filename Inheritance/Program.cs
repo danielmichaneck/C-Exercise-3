@@ -52,22 +52,25 @@ namespace Inheritance
         {
             Random random = new();
 
-            // 3.
+            // 3. Create a list of Animals.
             List<Animal> animalList = new();
 
-            // 4.
+            // 4. Create a few Animals and add them
+            // to the list of Animals.
             for (int i = 0; i < AnimalCount + 1; i++)
             {
                 animalList.Add(StaticAnimalHelper.GetAnimal(i, random));
             }
 
-            // 5.
+            // 5. Print which animals are in the list.
             foreach (Animal animal in animalList)
             {
                 Console.WriteLine(animal.Name);
-                // 6.
+                // 6. Call the DoSound() method
+                // in the animals.
                 animal.DoSound();
-                // 7.
+                // 7. Check if animal is IPerson and
+                // if so, call Talk().
                 if (animal is IPerson person)
                 {
                     person.Talk();
@@ -77,7 +80,7 @@ namespace Inheritance
 
             Console.WriteLine("__________" + Environment.NewLine);
 
-            // 8.
+            // 8. Create a list of dogs.
             List<Dog> dogList = new();
 
             for (int i = 0; i < 4; i++)
@@ -85,11 +88,11 @@ namespace Inheritance
                 dogList.Add(new Dog());
             }
 
-            // F9.
+            // F9. Try to add a horse to the list of dogs.
             // dogList.Add(new Horse()); ERROR
             // You cannot add a Horse to a list of Dogs!
 
-            // 11.
+            // 11. Print all the Animal stats.
             foreach (Animal animal in animalList)
             {
                 Console.WriteLine(animal.Stats());
@@ -97,7 +100,8 @@ namespace Inheritance
 
             Console.WriteLine("__________" + Environment.NewLine);
 
-            // 14.
+            // 14. Print Stats only for the dogs in
+            // the Animal list.
             foreach (Animal animal in animalList)
             {
                 // F17
@@ -107,7 +111,8 @@ namespace Inheritance
                 if (animal is Dog dog)
                 {
                     Console.WriteLine(animal.Stats());
-                    // 18.
+                    // 18. Find a method to call the Dog
+                    // method in the animal list.
                     // By typecasting animal into Dog dog I can access
                     // The AddSpeed() method in the Dog.
                     dog.AddSpeed(10);

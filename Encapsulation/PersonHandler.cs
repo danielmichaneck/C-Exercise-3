@@ -9,10 +9,13 @@ using System.Runtime.CompilerServices;
 
 namespace Persons
 {
+    /// <summary>
+    /// Creates and edits Person instances.
+    /// </summary>
     internal class PersonHandler
     {
         /// <summary>
-        /// Creates a Person with the values in the parameter.
+        /// Creates a Person instance with the values in the parameter.
         /// </summary>
         /// <param name="age"></param>
         /// <param name="fname"></param>

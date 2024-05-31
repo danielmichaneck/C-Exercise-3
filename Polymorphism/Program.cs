@@ -9,9 +9,12 @@
     {
         static void Main(string[] args)
         {
-            List<UserError> errors = new();
             Random random = new();
 
+            // 7. Create a list of UserErrors and populate
+            // it with instances of UserErrors-derived classes.
+            List<UserError> errors = new();
+            
             for (int i = 0; i < 10; i++)
             {
                 if (random.Next(0, 1000) % 2 == 0)
@@ -19,6 +22,7 @@
                 else errors.Add(new TextInputError());
             }
 
+            // 8. Print all the UserError messages.
             foreach (UserError error in errors)
             {
                 Console.WriteLine(error.UEMessage());
@@ -27,6 +31,8 @@
             Console.WriteLine();
             errors.Clear();
 
+            // 9 & 10. Adding all the different types
+            // of errors to a list and then printing them.
             for (int i = 0; i < 20; i++)
             {
                 switch (random.Next(0, 1000) % 5)
