@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Encapsulation\Encapsulation.csproj" />
+    <ProjectReference Include="..\Inheritance\Inheritance.csproj" />
   </ItemGroup>
 
   <ItemGroup>

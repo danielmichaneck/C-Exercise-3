@@ -1,4 +1,8 @@
-﻿// Polymorphism
+﻿using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("Tests")]
+
+// Polymorphism
 // 13 F: If we need a new attribute for all birds
 // that attribute should go in the Bird class as
 // all birds inherit from it.
@@ -31,8 +35,6 @@
 // for the method it cannot acces it!
 // A type cast is necessary to treat the
 // animal like a dog.
-
-using System.Runtime.CompilerServices;
 
 namespace Inheritance
 {
