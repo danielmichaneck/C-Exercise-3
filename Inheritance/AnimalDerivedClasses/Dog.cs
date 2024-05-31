@@ -33,6 +33,12 @@ namespace Inheritance
             StaticAnimalHelper.AppendAnimalProperty(DogProperties, "Is a good boy", IsGoodBoy.ToString());
         }
 
+        private void AddSpeed(int addedSpeed)
+        {
+            Speed += addedSpeed;
+            Console.WriteLine($"{Name} is now running at a speed of {Speed}!");
+        }
+
         public override string Stats()
         {
             return DogProperties.ToString();

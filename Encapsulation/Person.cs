@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Persons
 {
+    /// <summary>
+    /// A class containing information about a person.
+    /// </summary>
     internal class Person
     {
         private int _age;
@@ -76,6 +79,13 @@ namespace Persons
             LName = names[1];
         }
 
+        /// <summary>
+        /// Checks if a string is a valid input.
+        /// </summary>
+        /// <param name="prop"></param>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         private bool CheckStringNullLengthValidity(string prop, string str)
         {
             if (String.IsNullOrWhiteSpace(str))
@@ -83,6 +93,15 @@ namespace Persons
             else return true;
         }
 
+        /// <summary>
+        /// Checks if a string is of a valid length.
+        /// </summary>
+        /// <param name="prop"></param>
+        /// <param name="str"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         private bool CheckStringLengthValidity(string prop, string str, int min, int max)
         {
             if (str.Length < min)

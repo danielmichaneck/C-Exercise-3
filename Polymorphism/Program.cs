@@ -1,5 +1,10 @@
 ﻿namespace Polymorphism
 {
+    /// <summary>
+    /// A program that adds UserErrors to a list
+    /// and displays their message. Assigns errors
+    /// to the list randomly.
+    /// </summary>
     internal class Program
     {
         static void Main(string[] args)

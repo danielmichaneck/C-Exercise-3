@@ -1,4 +1,5 @@
-﻿// 13 F: If we need a new attribute for all birds
+﻿// Polymorphism
+// 13 F: If we need a new attribute for all birds
 // that attribute should go in the Bird class as
 // all birds inherit from it.
 
@@ -6,6 +7,7 @@
 // that attribute should go in the Animal
 // class as all animals inherit from it.
 
+// More polymorphism
 // F9: What happens if I try to add a horse to a list of dogs?
 // dogList.Add(new Horse()); ERROR
 // You cannot add a Horse to a list of Dogs!
@@ -51,6 +53,8 @@ namespace Inheritance
                 Console.WriteLine();
             }
 
+            Console.WriteLine("__________" + Environment.NewLine);
+
             List<Dog> dogList = new();
 
             for (int i = 0; i < 4; i++)
@@ -63,9 +67,19 @@ namespace Inheritance
                 Console.WriteLine(animal.Stats());
             }
 
-            foreach(Animal animal in dogList)
+            Console.WriteLine("__________" + Environment.NewLine);
+
+            // Type cast eller loopa rätt lista?
+            foreach (Animal animal in animalList)
             {
-                Console.WriteLine(animal.Stats());
+                // animal.AddSpeed(); ERROR
+                // Animal does not contain a definition for AddSpeed()!
+                // Only Dog does!
+                if (animal is Dog dog)
+                {
+                    Console.WriteLine(animal.Stats());
+                    Console.WriteLine("?");
+                }
             }
         }
 

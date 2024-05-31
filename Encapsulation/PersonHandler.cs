@@ -11,6 +11,15 @@ namespace Persons
 {
     internal class PersonHandler
     {
+        /// <summary>
+        /// Creates a Person with the values in the parameter.
+        /// </summary>
+        /// <param name="age"></param>
+        /// <param name="fname"></param>
+        /// <param name="lname"></param>
+        /// <param name="height"></param>
+        /// <param name="weight"></param>
+        /// <returns></returns>
         public Person CreatePerson(int age, string fname, string lname, double height, double weight)
         {
             Person person = new(fname, lname);

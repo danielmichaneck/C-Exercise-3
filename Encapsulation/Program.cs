@@ -1,5 +1,9 @@
 ﻿namespace Persons
 {
+    /// <summary>
+    /// A program that creates different people using an
+    /// intermediary person handler.
+    /// </summary>
     internal class Program
     {
         static void Main(string[] args)
