@@ -8,6 +8,10 @@ namespace Inheritance
 {
     internal class Wolfman : Wolf, IPerson
     {
+        /// <summary>
+        /// Implements the IPerson interface to
+        /// print a phrase to the console.
+        /// </summary>
         void IPerson.Talk()
         {
             Console.WriteLine("Awoo! Ahem, sorry. It's a full moon tonight.");

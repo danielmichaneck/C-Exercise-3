@@ -24,10 +24,24 @@
 // The foreach loop calls the Stats() method
 // in all Animals in the animalList.
 
+// F17: Why cannot the program access the
+// method in Dog by looping through the
+// Animal-list?
+// Since Animal does not contain a definition
+// for the method it cannot acces it!
+// A type cast is necessary to treat the
+// animal like a dog.
+
 using System.Runtime.CompilerServices;
 
 namespace Inheritance
 {
+    /// <summary>
+    /// A program that creates a list of Animals and
+    /// a list of Dogs and then performs various
+    /// operations on these lists. Mostly printing
+    /// sounds they make or statistics about them.
+    /// </summary>
     internal class Program
     {
         internal const int AnimalCount = 6;
@@ -35,17 +49,23 @@ namespace Inheritance
         static void Main(string[] args)
         {
             Random random = new();
+
+            // 3.
             List<Animal> animalList = new();
 
+            // 4.
             for (int i = 0; i < AnimalCount + 1; i++)
             {
-                animalList.Add(GetAnimal(i, random));
+                animalList.Add(StaticAnimalHelper.GetAnimal(i, random));
             }
 
+            // 5.
             foreach (Animal animal in animalList)
             {
                 Console.WriteLine(animal.Name);
+                // 6.
                 animal.DoSound();
+                // 7.
                 if (animal is IPerson person)
                 {
                     person.Talk();
@@ -55,62 +75,41 @@ namespace Inheritance
 
             Console.WriteLine("__________" + Environment.NewLine);
 
+            // 8.
             List<Dog> dogList = new();
 
             for (int i = 0; i < 4; i++)
             {
-                dogList.Append(new Dog());
+                dogList.Add(new Dog());
             }
 
-            foreach(Animal animal in animalList)
+            // F9.
+            // dogList.Add(new Horse()); ERROR
+            // You cannot add a Horse to a list of Dogs!
+
+            // 11.
+            foreach (Animal animal in animalList)
             {
                 Console.WriteLine(animal.Stats());
             }
 
             Console.WriteLine("__________" + Environment.NewLine);
 
-            // Type cast eller loopa rätt lista?
+            // 14.
             foreach (Animal animal in animalList)
             {
+                // F17
                 // animal.AddSpeed(); ERROR
                 // Animal does not contain a definition for AddSpeed()!
                 // Only Dog does!
                 if (animal is Dog dog)
                 {
                     Console.WriteLine(animal.Stats());
-                    Console.WriteLine("?");
+                    // 18.
+                    // By typecasting animal into Dog dog I can access
+                    // The AddSpeed() method in the Dog.
+                    dog.AddSpeed(10);
                 }
-            }
-        }
-
-        static Animal GetAnimal(int animalInt, Random random)
-        {
-            switch (animalInt)
-            {
-                case 0:
-                    if (random.Next(2) == 0)
-                        return new Flamingo();
-                    else if (random.Next(1) == 0)
-                        return new Pelican();
-                    else return new Swan();
-
-                case 1:
-                    return new Dog();
-
-                case 2:
-                    return new Hedgehog();
-
-                case 3:
-                    return new Horse();
-
-                case 4:
-                    return new Wolf();
-
-                case 5:
-                    return new Worm();
-
-                default:
-                    return new Wolfman();
             }
         }
     }

@@ -33,7 +33,12 @@ namespace Inheritance
             StaticAnimalHelper.AppendAnimalProperty(DogProperties, "Is a good boy", IsGoodBoy.ToString());
         }
 
-        private void AddSpeed(int addedSpeed)
+        /// <summary>
+        /// F15
+        /// New function unique to Dog.
+        /// </summary>
+        /// <param name="addedSpeed"></param>
+        internal void AddSpeed(int addedSpeed)
         {
             Speed += addedSpeed;
             Console.WriteLine($"{Name} is now running at a speed of {Speed}!");

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Inheritance
 {
+    /// <summary>
+    /// An interface for people.
+    /// </summary>
     internal interface IPerson
     {
         internal void Talk();
